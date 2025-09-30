@@ -1,0 +1,7 @@
+services:
+  - type: web
+    plan: free
+    name: mysite
+    runtime: python
+    buildCommand: 'pip install -r requirements.txt && python manage.py collectstatic --noinput'
+    startCommand: 'uvicorn yfinance_django.asgi:application --host 0.0.0.0 --port $PORT'
